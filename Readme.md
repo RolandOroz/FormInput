@@ -1,3 +1,16 @@
+You have to download Sencha CMD from : https://www.sencha.com/products/extjs/cmd-download/
+
+1. Put everything in one folder. 
+2. Run CMD or Terminal from the same folder as the App.
+3. Type: sencha app watch
+
+
+
+
+
+
+
+
 # FormInput
 
 This folder is primarily a container for the top-level pieces of the application.
