@@ -16,17 +16,32 @@ Ext.define('FormInput.Application', {
         }
     },
 
-	removeSplash: function () {
-		Ext.getBody().removeCls('launching')
-		var elem = document.getElementById("splash")
-		elem.parentNode.removeChild(elem)
-	},
+    launch: function () {
+        this.removeSplash()
+        var whichView = 'app-main'
+        //Ext.Viewport.add([{xtype: app-main}])
+        function sleep(milliseconds) {
+            const date = Date.now();
+            let currentDate = null;
+            do {
+                currentDate = Date.now();
+            } while (currentDate - date < milliseconds);
+        }
+        sleep(2000);
 
-	launch: function () {
-		this.removeSplash()
-		var whichView = 'app-main'
-		//Ext.Viewport.add([{xtype: app-main}])
+
+
+    },
+
+	removeSplash: function () {
+		Ext.getBody().removeCls('launchingLoadPage')
+		var elem = document.getElementById("splashLoadPage")
+        elem.parentNode.removeChild(elem)
+        
 	},
+    
+
+
 
     onAppUpdate: function () {
         Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
