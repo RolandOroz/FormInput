@@ -7,15 +7,17 @@
  */
 Ext.define('FormInput.view.main.Main', {
     extend: 'Ext.container.Viewport',
-    xtype: 'app-main',
+    xtype: 'app-mainView',
+    scrollable: true,
 
     requires: [
+        'Ext.*',
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-
+        'FormInput.view.forms.NewsInput',
         'FormInput.view.main.MainController',
         'FormInput.view.main.MainModel',
-        'FormInput.view.main.List'
+        'FormInput.view.main.List',
     ],
 
     controller: 'main',
@@ -33,28 +35,19 @@ Ext.define('FormInput.view.main.Main', {
             {
                 xtype: 'panel',
                 region: 'north',
-                title: 'Rolly\s App',
+                title: 'Rolly\'s App',
 
             },
             {
                 xtype: 'app-mainBorder',
                 region: 'center',
-
+                scrollable: true,
             },
             {
                  xtype: 'panel',
                  region: 'south',
                  title: 'Footer',
             },
-            {
-                xtype: 'panel',
-                region: 'east',
-                title: 'Info',
-                flex: 0.1,
-                collapsible: true,
-                split: true,
-                titleCollapse: true,
-                collapsed: true,
-            }
+            
         ]
     });

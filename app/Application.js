@@ -18,8 +18,8 @@ Ext.define('FormInput.Application', {
 
     launch: function () {
         this.removeSplash()
-        var whichView = 'app-main'
-        //Ext.Viewport.add([{xtype: app-main}])
+        var whichView = 'app-mainView'
+        
         function sleep(milliseconds) {
             const date = Date.now();
             let currentDate = null;
@@ -27,7 +27,7 @@ Ext.define('FormInput.Application', {
                 currentDate = Date.now();
             } while (currentDate - date < milliseconds);
         }
-        sleep(2000);
+        sleep(2000); //Delay for loader
 
 
 
