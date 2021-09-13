@@ -32,10 +32,13 @@
        title: 'Recent Posts',
        region: 'center',
        scrollable: true,
+       id: 'recPost',
        
          items:
              [
                  {
+                     xtype: 'panel',
+                     id: 'postItem',
                      html: '<h1>Some Post</H1><br><h2>Post Title</h2><br><h3>TexttextTexttextTexttext<br>TexttextTexttext</h3>', 
                  }
              ]
