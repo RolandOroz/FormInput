@@ -6,6 +6,8 @@ Ext.define('FormInput.view.forms.NewsInput', {
     title: 'News Input',
     scrollable: true,
     layout: 'fit',
+    id: 'newsInput',
+    name: 'newsInput',
 
     items:
         [
@@ -13,6 +15,7 @@ Ext.define('FormInput.view.forms.NewsInput', {
                 xtype: 'container',
                 layout: 'hbox',
                 scrollable: true,
+                required: true,
 
                 
                 items:
@@ -20,17 +23,18 @@ Ext.define('FormInput.view.forms.NewsInput', {
                         {
                             xtype: 'textfield',
                             fieldLabel: 'First Name',
-                            name: 'First Name',
+                            name: 'fName',
                             labelAlign: 'top',
                             cls: 'field-margin',
                             flex: 1,
                             id: 'firstName',
+                            required: true,
                         },
                         {
                             xtype: 'textfield',
                             fieldLabel: 'Last Name',
                             text: 'hjgs',
-                            name: 'LastName',
+                            name: 'lName',
                             labelAlign: 'top',
                             cls: 'field-margin',
                             flex: 1,
@@ -49,7 +53,7 @@ Ext.define('FormInput.view.forms.NewsInput', {
                         {
                             xtype: 'textfield',
                             fieldLabel: 'Email Address',
-                            name: 'EmailAddress',
+                            name: 'eAddress',
                             labelAlign: 'top',
                             cls: 'field-margin',
                             columnWidth: 0.6,
@@ -58,7 +62,7 @@ Ext.define('FormInput.view.forms.NewsInput', {
                         {
                             xtype: 'datefield',
                             fieldLabel: 'Date',
-                            name: 'Date',
+                            name: 'fDate',
                             labelAlign: 'top',
                             cls: 'field-margin',
                             columnWidth: 0.4,
@@ -66,7 +70,7 @@ Ext.define('FormInput.view.forms.NewsInput', {
                         },
                         {
                             xtype: 'htmleditor',                                                      
-                            name: 'Post',
+                            name: 'fPost',
                             fieldLabel: 'Post',
                             labelAlign: 'top',
                             cls: 'field-margin',
@@ -88,6 +92,33 @@ Ext.define('FormInput.view.forms.NewsInput', {
                         
                     ]
             },
+            
+            
+                {
+                    xtype: 'button',
+                    text: 'Submit',
+                    shadow: true,
+                    handler: function myFunction() {
+                        // Get the value of the input field with id="firstName"
+                        form = document.getElementById("newsInput");
+                        //current Time and Date
+                        let current = new Date();
+                        let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
+                        let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+                        let dateTime = cDate + ' ' + cTime;
+                        
+                        let text;
+                        if ("newsInput") {
+                            text = "Input submited at: " + dateTime + "with the value of:" + form;
+                            
+                        } else {
+                            text = "Not submited";
+                        }
+                        document.getElementById("postItem").innerHTML = text;
+                       
+                    }
+                }
+            
         ]
             
 });
