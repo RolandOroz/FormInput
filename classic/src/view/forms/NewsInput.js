@@ -1,124 +1,96 @@
 Ext.define('FormInput.view.forms.NewsInput', {
-    extend: 'Ext.container.Container',
-    xtype: 'NewsInputBase',
+    extend: 'Ext.form.Panel',
+    xtype: 'NewsInput',
 
     style: 'margin: 50px',
     title: 'News Input',
     scrollable: true,
-    layout: 'fit',
+    flex: 1,
     id: 'newsInput',
     name: 'newsInput',
 
     items:
         [
             {
-                xtype: 'container',
-                layout: 'hbox',
+                xtype: 'form',
+                layout: 'form',
+                id:'addpost',
                 scrollable: true,
                 required: true,
+
 
                 
                 items:
                     [
                         {
                             xtype: 'textfield',
-                            fieldLabel: 'First Name',
-                            name: 'fName',
+                            fieldLabel: 'ID No',
+                            name: 'id',
+                            id: 'id',
                             labelAlign: 'top',
                             cls: 'field-margin',
                             flex: 1,
-                            id: 'firstName',
+                            hidden: false,
+                        },
+                        {
+                            xtype: 'textfield',
+                            fieldLabel: 'News Title',
+                            name: 'newstitle',
+                            labelAlign: 'top',
+                            cls: 'field-margin',
+                            flex: 1,
+                            id: 'newstitle',
                             required: true,
-                        },
-                        {
-                            xtype: 'textfield',
-                            fieldLabel: 'Last Name',
-                            text: 'hjgs',
-                            name: 'lName',
-                            labelAlign: 'top',
-                            cls: 'field-margin',
-                            flex: 1,
-                            id: 'lastName',
-                        },
-                                                                        
-                    ]
-                        
-            },
-            {
-                xtype: 'container',
-                layout: 'column',
-                scrollable: true,
-                items:
-                    [
-                        {
-                            xtype: 'textfield',
-                            fieldLabel: 'Email Address',
-                            name: 'eAddress',
-                            labelAlign: 'top',
-                            cls: 'field-margin',
-                            columnWidth: 0.6,
-                            id: 'email',
                         },
                         {
                             xtype: 'datefield',
                             fieldLabel: 'Date',
-                            name: 'fDate',
+                            name: 'cdate',
+                            version: 4,
                             labelAlign: 'top',
                             cls: 'field-margin',
-                            columnWidth: 0.4,
-                            id: 'dateForm',
+                            flex: 1,
+                            id: 'cdate',
+                           // hidden: 'true',
                         },
                         {
-                            xtype: 'htmleditor',                                                      
+                            xtype: 'textarea',
                             name: 'fPost',
-                            fieldLabel: 'Post',
+                            fieldLabel: 'Content',
                             labelAlign: 'top',
                             cls: 'field-margin',
                             columnWidth: 1,
-                            width: 400,
-                            height: 800,
+                            //width: 200,
+                            //height: 800,
                             fieldBodyCls: 'editorText',
-                            enableColors: true,
-                            enableFont: true,
-                            enableFontSize: true,
-                            enableFormat: true,
-                            enableLinks: true,
-                            enableLists: true,
-                            enableSourceEdit: true,
-                            id: 'htmlEditorText',
+                            id: 'editorText',
                             scrollable: true,
-                            
                         },
-                        
-                    ]
-            },
-            
-            
-                {
-                    xtype: 'button',
-                    text: 'Submit',
-                    shadow: true,
-                    handler: function myFunction() {
-                        // Get the value of the input field with id="firstName"
-                        form = document.getElementById("newsInput");
-                        //current Time and Date
-                        let current = new Date();
-                        let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
-                        let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
-                        let dateTime = cDate + ' ' + cTime;
-                        
-                        let text;
-                        if ("newsInput") {
-                            text = "Input submited at: " + dateTime + "with the value of:" + form;
-                            
-                        } else {
-                            text = "Not submited";
+
+                    ],
+                    buttons:
+                    [
+                        {
+                            text: 'Add Post',
+                            handler: 'onAdd',
+                            id: 'buttonadpost',
+                            cls: 'field-margin',
+                            //handler: 'addpost',
+                            iconCls:'fas fa-check',
+                            flex: 1,
+                            handler: function(btn) {
+                                var data = this.up('form');
+                                console.log("print form data", data.getForm().getValues());
+                            }
                         }
-                        document.getElementById("postItem").innerHTML = text;
-                       
-                    }
-                }
+                    ]
+                        
+            },
+
             
+
+
+
         ]
             
 });

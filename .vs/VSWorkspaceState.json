@@ -2,13 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\model",
-    "\\app\\store",
-    "\\app\\view",
     "\\app\\view\\main",
     "\\classic",
     "\\classic\\src",
     "\\classic\\src\\view",
+    "\\classic\\src\\view\\forms",
     "\\classic\\src\\view\\main"
   ],
   "SelectedNode": "\\classic\\src\\view\\main\\Main.js",
