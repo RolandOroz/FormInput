@@ -14,3 +14,4 @@ Ext.define('FormInput.view.main.MainModel', {
 
     //TODO - add data, formulas and/or methods to support your view
 });
+

@@ -15,7 +15,9 @@ Ext.application({
 
 
 
-    // The name of the initial view to create.
-   //mainView: 'FormInput.view.main.FieldContainer'
+   // Test views
+   // mainView: 'FormInput.view.forms.NewsInput'
+
+   // Main view
     mainView: 'FormInput.view.main.Main'
 });

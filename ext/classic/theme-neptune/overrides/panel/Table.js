@@ -13,4 +13,5 @@ Ext.define('Ext.theme.neptune.panel.Table', {
             me.bodyBorder = true;
         }
     }
+
 });

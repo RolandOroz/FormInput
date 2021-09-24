@@ -2,9 +2,6 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\model",
-    "\\app\\store",
-    "\\app\\view",
     "\\app\\view\\main",
     "\\classic",
     "\\classic\\src",
