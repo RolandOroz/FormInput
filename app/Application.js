@@ -6,15 +6,57 @@
 Ext.define('FormInput.Application', {
     extend: 'Ext.app.Application',
 
+    id: 'appMainView',
     name: 'FormInput',
-    requires: ['FormInput.*'],
-
+ /*   requires:
+            [
+                'FormInput.*',
+                'Ext.form.Panel'
+            ],
+*/
     quickTips: false,
     platformConfig: {
         desktop: {
             quickTips: true
         }
     },
+
+    requires:
+            [
+                'Ext.toolbar.Paging',
+                'FormInput.*',
+                'Ext.form.Panel',
+            ],
+       model:
+            [
+                'FormInput.model.Post',
+                'FormInput.view.main.MainModel',
+            ],
+        views:
+            [
+                'FormInput.view.LeftPanelSide',
+                'FormInput.view.main.Main',
+                'FormInput.view.main.MainBorder',
+                'FormInput.view.main.PostGrid',
+                'FormInput.view.main.PostGridMemoryType',
+                'FormInput.main.PostsFormMemoryType',
+                'FormInput.main.PostsForm',
+                'FormInput.model.Post'
+            ],
+
+        stores:
+            [
+                'FormInput.store.PostApi',
+                'FormInput.store.Posts'
+            ],
+
+        controllers:
+            [
+                'MainMemoryType',
+                'Main',
+
+
+            ],
 
     launch: function () {
         this.removeSplash()
@@ -27,7 +69,7 @@ Ext.define('FormInput.Application', {
                 currentDate = Date.now();
             } while (currentDate - date < milliseconds);
         }
-        sleep(2000); //Delay for loader
+        //sleep(2000); //Delay for loade
 
 
 
