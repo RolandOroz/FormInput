@@ -2,9 +2,14 @@ Ext.define('FormInput.model.Post', {
     extend: 'Ext.data.Model',
     alias: 'model.postmodel',
 
-    name: 'News Viewer',
+   // idProperty: 'id',
 
-   fields:
+   // fields:
+   // [
+   //     'id', 'newstitle', 'cdate', 'fPost'
+   // ]
+
+    fields:
         [
             {
                 name: 'id',

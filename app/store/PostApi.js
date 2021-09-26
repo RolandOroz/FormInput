@@ -27,7 +27,7 @@ Ext.define('FormInput.store.PostApi', {
 
             writer: {
                 type: 'json',
-                rootProperty: 'data',
+                root: 'data',
                 encode: true
             }
 
