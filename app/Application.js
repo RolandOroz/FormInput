@@ -5,7 +5,7 @@
  */
 Ext.define('FormInput.Application', {
     extend: 'Ext.app.Application',
-<<<<<<< HEAD
+
 
     id: 'appMainView',
     name: 'FormInput',
@@ -15,7 +15,7 @@ Ext.define('FormInput.Application', {
                 'Ext.form.Panel'
             ],
 */
-=======
+
     id: 'appMainView',
     name: 'FormInput',
     requires:
@@ -24,7 +24,7 @@ Ext.define('FormInput.Application', {
             'Ext.form.Panel'
         ],
 
->>>>>>> 18de30478e1c6becee6f889c8291a6bb5a83c611
+
     quickTips: false,
     platformConfig: {
         desktop: {
@@ -33,7 +33,7 @@ Ext.define('FormInput.Application', {
     },
 
     requires:
-<<<<<<< HEAD
+
             [
                 'Ext.toolbar.Paging',
                 'FormInput.*',
@@ -42,7 +42,7 @@ Ext.define('FormInput.Application', {
        model:
             [
                 'FormInput.model.Post',
-                'FormInput.view.main.MainModel',
+
             ],
         views:
             [
@@ -64,15 +64,11 @@ Ext.define('FormInput.Application', {
 
         controllers:
             [
-                'MainMemoryType',
-                'Main',
+                'FormInput.controller.Main',
+                'FormInput.controller.MainMemoryType'
 
 
             ],
-=======
-        [
-            'Ext.toolbar.Paging'
-        ],
 
     views:
         [
@@ -88,12 +84,12 @@ Ext.define('FormInput.Application', {
         [
             'Main'
         ],
->>>>>>> 18de30478e1c6becee6f889c8291a6bb5a83c611
+
 
     launch: function () {
         this.removeSplash()
         var whichView = 'app-mainView'
-        
+
         function sleep(milliseconds) {
             const date = Date.now();
             let currentDate = null;
@@ -101,11 +97,11 @@ Ext.define('FormInput.Application', {
                 currentDate = Date.now();
             } while (currentDate - date < milliseconds);
         }
-<<<<<<< HEAD
+
         //sleep(2000); //Delay for loade
-=======
+
         //sleep(2000); //Delay for loader
->>>>>>> 18de30478e1c6becee6f889c8291a6bb5a83c611
+
 
 
 
@@ -115,9 +111,9 @@ Ext.define('FormInput.Application', {
 		Ext.getBody().removeCls('launchingLoadPage')
 		var elem = document.getElementById("splashLoadPage")
         elem.parentNode.removeChild(elem)
-        
+
 	},
-    
+
 
 
 
