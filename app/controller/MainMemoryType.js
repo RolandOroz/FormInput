@@ -1,6 +1,6 @@
 Ext.define('FormInput.controller.MainMemoryType', {
     extend: 'Ext.app.Controller',
-
+    alias: 'controller.mainmemorytype',
 
     models:
         [
