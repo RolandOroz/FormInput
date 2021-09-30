@@ -24,10 +24,9 @@ Ext.define('FormInput.main.PostsForm', {
                     items:
                         [
                             {
-                                xtype: 'textfield',
+                                xtype: 'numberfield',
                                 fieldLabel: 'ID No',
                                 name: 'id',
-                                hidden: false,
                             },
                             {
                                 xtype: 'textfield',
@@ -79,7 +78,7 @@ Ext.define('FormInput.main.PostsForm', {
                     {
                         xtype: 'button',
                         text: 'Save',
-                        itemId: 'save',    //'add'
+                        itemId: 'save',
                         iconCls: 'fa fa-check',
                         displayInfo: true,
                         flex: 1,

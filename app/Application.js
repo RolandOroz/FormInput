@@ -8,12 +8,7 @@ Ext.define('FormInput.Application', {
 
     id: 'appMainView',
     name: 'FormInput',
- /*   requires:
-            [
-                'FormInput.*',
-                'Ext.form.Panel'
-            ],
-*/
+
     quickTips: false,
     platformConfig: {
         desktop: {
@@ -30,17 +25,16 @@ Ext.define('FormInput.Application', {
        model:
             [
                 'FormInput.model.Post',
-                'FormInput.view.main.MainModel',
+          //      'FormInput.view.main.MainModel',
             ],
         views:
             [
                 'FormInput.view.LeftPanelSide',
-                'FormInput.view.main.Main',
+              //  'FormInput.view.main.Main',
                 'FormInput.view.main.MainBorder',
-                'FormInput.view.main.PostGrid',
+               // 'FormInput.view.main.PostGrid',
                 'FormInput.view.main.PostGridMemoryType',
                 'FormInput.main.PostsFormMemoryType',
-                'FormInput.main.PostsForm',
                 'FormInput.model.Post'
             ],
 
@@ -53,7 +47,7 @@ Ext.define('FormInput.Application', {
         controllers:
             [
                 'MainMemoryType',
-               // 'Main',
+              //  'Main',
 
 
             ],

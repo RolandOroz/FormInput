@@ -2,33 +2,27 @@ Ext.define('FormInput.model.Post', {
     extend: 'Ext.data.Model',
     alias: 'model.postmodel',
 
-   // idProperty: 'id',
-
-   // fields:
-   // [
-   //     'id', 'newstitle', 'cdate', 'fPost'
-   // ]
+  //  idProperty: 'id',
 
     fields:
         [
             {
                 name: 'id',
-                type: 'int'
+                type: 'int',
             },
             {
                 name: 'newstitle',
-                type: 'string'
+
             },
             {
 
                 name: 'cdate',
                 type: 'date',
-                //dateFormat: 'c',
-
+                dateFormat: 'c',
             },
             {
                 name: 'fpost',
-                type: 'string'
+
             }
         ],
 

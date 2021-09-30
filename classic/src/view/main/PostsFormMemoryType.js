@@ -26,21 +26,19 @@ Ext.define('FormInput.main.PostsFormMemoryType', {
                     items:
                         [
                             {
+                              //  xtype: 'hiddenfield',
                                 xtype: 'textfield',
-                                fieldLabel: 'ID No',
                                 name: 'id',
                             },
                             {
                                 xtype: 'textfield',
                                 fieldLabel: 'News Title',
                                 name: 'newstitle',
-
                             },
                             {
                                 xtype: 'datefield',
                                 fieldLabel: 'Date',
                                 name: 'cdate',
-
                             },
                             {
                                 xtype: 'textareafield',

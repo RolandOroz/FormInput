@@ -3,23 +3,23 @@ Ext.define('FormInput.view.main.PostGridMemoryType', {
     xtype: 'postGridMemoryType',
 
     alias: 'widget.postgridmemorytype',
-   // controller: 'main',
+    //controller: 'main',
     scrollable: true,
     autoScroll: true,
 
-    controllers:
+  /*  controllers:
         [
             'MainMemoryType',
         ],
     views:
         [
             'FormInput.model.Post'
-        ],
+        ],*/
 
     flex: 1,
     layout: 'fit',
 
-    store:   {type:'posts'}, // 'FormInput.store.PostApi', //TODO: change store type for different use
+    store:   {type:'postApi'},
 
     model: 'FormInput.model.Post',
 
@@ -40,14 +40,14 @@ Ext.define('FormInput.view.main.PostGridMemoryType', {
             text: 'Id',
             dataIndex: 'id',
             width: 100,
-          //  editable: false,
-
+            type: 'int',
         },
         {
 
             text: 'Title',
             dataIndex: 'newstitle',
             width: 250,
+            type: 'string'
         },
         {
             text: 'Date',
