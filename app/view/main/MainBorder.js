@@ -42,10 +42,7 @@ Ext.define('FormInput.view.main.MainBorder', {
          items:
              [
                  {
-                  //  xtype: 'postgrid',    // fake (static) type DB
-
                      xtype: 'postgridmemorytype',   // memory type DB
-
                  }
              ]
 

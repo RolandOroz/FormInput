@@ -1,34 +1,43 @@
 Ext.define('FormInput.store.PostApi', {
     extend: 'Ext.data.Store',
     alias: 'store.postApi',
-
+    restful:true,
     model: 'FormInput.model.Post',
 
-    pageSize: 20, //TODO: activate on DB setup
+    //pageSize: 20, //TODO: activate on DB setup
+
+    requires:
+            [
+                'FormInput.model.Post',
+                'Ext.data.proxy.Ajax',
+                'Ext.data.reader.Json',
+                'FormInput.controller.MainMemoryType',
+            ],
 
     proxy:
         {
-            type: 'ajax',
-            url: 'https://jsonplaceholder.typicode.com/posts', //TODO:place a real API url it is a mook
+            type: 'rest',
+            url: 'http://localhost:3004/newsposts',
+            actionMethods:{
 
-         /*   api:{          77 TODO: UNCOMMENT and put links in!!!
-                    create: //insert link
-                    read:
-                    update:
-                    destroy:
-            }, */
+                    create: 'POST',
+                    read: 'GET',
+                    update: 'PUT',
+                    destroy: 'DELETE',
+            },
 
             reader:
                 {
-                    rootProperty: 'data',
+                    successProperty:'success',
+                    rootProperty: 'newsposts',
                     type: 'json',
-
+                  //  encode: true,
+                  //  messageProperty: 'message',
                 },
-
             writer: {
                 type: 'json',
-                root: 'data',
-                encode: true
+                rootProperty: 'newsposts',
+               // messageProperty: 'message',
             }
 
         },

@@ -1,6 +1,6 @@
 Ext.define('FormInput.controller.MainMemoryType', {
     extend: 'Ext.app.Controller',
-    alias: 'controller.main',
+    alias: 'controller.mainmemorytype',
 
     models:
         [
@@ -9,13 +9,11 @@ Ext.define('FormInput.controller.MainMemoryType', {
 
     stores:
         [
-
-            'FormInput.store.Posts'        // memory store
+           'FormInput.store.Posts'
         ],
 
     views:
         [
-            'FormInput.view.main.PostGrid',
             'FormInput.view.main.PostGridMemoryType',  //memory Type DB
             'FormInput.main.PostsFormMemoryType',
         ],
@@ -45,18 +43,23 @@ Ext.define('FormInput.controller.MainMemoryType', {
                 grid.getStore().load();
             },
 
-            onAddClick: function(btn, e, eOpts ) {
+            openForm: function(title){
 
                 var editorWin = Ext.create('FormInput.main.PostsFormMemoryType');
 
-                editorWin.setTitle('Create New Content');
+                editorWin.setTitle(title);
+
+                return editorWin;
+            },
+
+            onAddClick: function(btn, e, eOpts ) {
+
+                this.openForm('Create New Content');
             },
 
             onEditClick: function( grid, record, item, index, e, eOpts ) {
 
-                var editorWin = Ext.create('FormInput.main.PostsFormMemoryType');
-
-                editorWin.setTitle('Update  # ID ' + record.get('id'));
+                var editorWin = this.openForm('Update  # ID ' + record.get('id'));
 
                 var form = editorWin.down('form');
 
@@ -90,27 +93,38 @@ Ext.define('FormInput.controller.MainMemoryType', {
 
             onSaveClick: function(btn, e, eOpts ) {
 
-                var editorWin = btn.up('window');
+                var editorWin = btn.up('window'),
 
-                var form = editorWin.down('form');
+                    form = editorWin.down('form'),
 
-                var formValues = form.getValues();
+                    formValues = form.getValues(),
 
-                var newRecords = Ext.create('FormInput.model.Post', {
-                    id: formValues.id,
-                    newstitle: formValues.newstitle,
-                    cdate: formValues.cdate,
-                    fpost: formValues.fpost
+                    record = form.getRecord(),
 
-                });
+                    grid = Ext.ComponentQuery.query('postgridmemorytype')[0],
 
-                var grid = Ext.ComponentQuery.query('postgridmemorytype')[0];
+                    store = grid.getStore();
 
-                var store = grid.getStore();
+                if (record){ //edit post
 
-                store.add(newRecords);
+                    record.set(formValues);
 
-                store.sync(),
+                }else{ //new post
+
+                    var newRecords = Ext.create('FormInput.model.Post', {
+
+                        id: formValues.id,
+                        newstitle: formValues.newstitle,
+                        cdate: formValues.cdate,
+                        fpost: formValues.fpost,
+
+                    });
+
+                    store.insert(0,newRecords);
+
+                }
+
+                store.sync();
 
                 form.getForm().reset();
 

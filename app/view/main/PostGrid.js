@@ -6,19 +6,9 @@ Ext.define('FormInput.view.main.PostGrid', {
     controller: 'main',
     scrollable: true,
     autoScroll: true,
-
-
-
     flex: 1,
     layout: 'fit',
-
- //   store: 'FormInput.store.PostApi', // {type:'postApi'}, //TODO: change store type for different use
-
     store: {type:'postApi'},
-
-  /*  store: Ext.create('Ext.data.Store', { // Some alternativ config if Uncaught TypeError: Cannot read property..
-        model: 'FormInput.model.Post'
-    }), */
 
     title: 'Post',
     iconCls: 'fa fa-list',
@@ -40,8 +30,8 @@ Ext.define('FormInput.view.main.PostGrid', {
         {
 
             text: 'Title',
-          //  dataIndex: 'newstitle', //TODO:uncomment to load real Post layout
-            dataIndex: 'title', //TODO: delete to load real Post layout
+          //  dataIndex: 'newstitle',
+            dataIndex: 'title',
             width: 250,
 
 

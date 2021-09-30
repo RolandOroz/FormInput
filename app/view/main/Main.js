@@ -17,7 +17,7 @@ Ext.define('FormInput.view.main.Main', {
         'FormInput.view.LeftPanelSide',
         'FormInput.view.main.MainController',
         'FormInput.view.main.MainModel',
-        'FormInput.view.main.PostGrid',
+       // 'FormInput.view.main.PostGrid',
         'FormInput.view.main.PostGridMemoryType',
         'FormInput.main.PostsFormMemoryType',
         'FormInput.main.PostsForm',
@@ -25,7 +25,7 @@ Ext.define('FormInput.view.main.Main', {
     ],
 
     controller: 'main',
-    viewModel: 'main',
+ //   viewModel: 'main',
 
     //ui: 'navigation',
 
